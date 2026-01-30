@@ -160,6 +160,8 @@ class Group {
 export type Grades = 0 | 1 | 2 | 3 | 4 | 5;
 export type Lesson = "math" | "chemistry" | "ukrainian literature"; // etc.
 export type FullName = `${string} ${string}`;
+export type GradeRecord = Record<string, Grades>;
+export type Visit = Record<Lesson, boolean>;
 
 class Student {
   // implement 'set grade' and 'set visit' methods
@@ -167,8 +169,8 @@ class Student {
   private _firstName: string;
   private _lastName: string;
   private _birthYear: number;
-  private _grades: Record<string, Grades>[] = []; // workName: mark
-  private _visits: Record<Lesson, boolean>[] = []; // lesson: present
+  private _grades: GradeRecord[] = []; // workName: mark
+  private _visits: Visit[] = []; // lesson: present
 
   constructor(firstName: string, lastName: string, birthYear: number) {
     this._firstName = firstName;
@@ -186,6 +188,14 @@ class Student {
 
   get age(): number {
     return new Date().getFullYear() - this._birthYear;
+  }
+
+  set grade(grade: GradeRecord) {
+    this._grades.push(grade);
+  }
+
+  set visit(visit: Visit) {
+    this._visits.push(visit);
   }
 
   getPerformanceRating(): number {
