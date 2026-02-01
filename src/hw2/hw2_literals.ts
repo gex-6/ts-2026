@@ -82,7 +82,8 @@ class Level {
   private _name: string;
   private _description: string;
 
-  constructor(name: string, description: string) {
+  constructor(groups: Group[], name: string, description: string) {
+    this._groups = groups;
     this._name = name;
     this._description = description;
   }
@@ -116,12 +117,12 @@ class Group {
   private _area: Area;
   private _status: GroupStatuses;
   private _students: Student[] = []; // Modify the array so that it has a valid toSorted method* -- якщо я правильно зрозумів доки, в поточній реалізації буде працювати залежно від налаштувань tsconfig
-  directionName: string;
-  levelName: string;
+  private _directionName: string;
+  private _levelName: string;
 
   constructor(directionName: string, levelName: string, area: Area, status: GroupStatuses, students: Student[]) {
-    this.directionName = directionName;
-    this.levelName = levelName;
+    this._directionName = directionName;
+    this._levelName = levelName;
     this._area = area;
     this._status = status;
     this._students = students;
