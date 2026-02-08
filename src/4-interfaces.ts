@@ -294,8 +294,8 @@ const loggedInUser: IUser = {
 
 // Array.prototype.toSorted = function() {};
 
-const z: Array<string> = [];
-z.toSorted(x => undefined);
+// const z: Array<string> = [];
+// z.toSorted(x => undefined);
 
 /*
 
