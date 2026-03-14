@@ -5,10 +5,12 @@
     "moduleResolution": "NodeNext",
     "rootDir": "src",
     "outDir": "dist",
-    "esModuleInterop": true, 
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
